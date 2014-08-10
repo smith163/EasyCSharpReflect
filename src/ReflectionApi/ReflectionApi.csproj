@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassMembers\Field.cs" />
+    <Compile Include="ClassMembers\Method.cs" />
+    <Compile Include="ClassMembers\Property.cs" />
+    <Compile Include="ClassMembers\VariableMember.cs" />
     <Compile Include="Convert\ReflectionConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -12,12 +12,21 @@ namespace ReflectionApi.TestConsole
     {
         public static void Main(string[] args)
         {
-            var test = ReflectionConvert.GetVariables(typeof(TestClass));
+            var test = ReflectionConvert.GetFields(typeof(TestClass));
+            var properties = ReflectionConvert.GetProperties(typeof(TestClass));
+
+            var methods = ReflectionConvert.GetMethods(typeof(TestClass));
 
             foreach(var val in test)
             {
-                Console.WriteLine(val);
+                Console.WriteLine(val.Name + ":" + val.Type.Name);
             }
+
+            foreach (var val in properties)
+            {
+                Console.WriteLine(val.Name + ":" + val.Type.Name);
+            }
+
 
             Console.ReadLine();
         }

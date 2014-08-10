@@ -11,5 +11,11 @@ namespace ReflectionApi.TestConsole
         public string Test1 { get; set; }
         public int Test2 { get; set; }
         public double Test3;
+        public string Test4;
+
+        public int TestMethod1()
+        {
+            return 0;
+        }
     }
 }
