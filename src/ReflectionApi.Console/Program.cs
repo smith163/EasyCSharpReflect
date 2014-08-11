@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ReflectionApi.Convert;
+using ReflectionApi.Api;
 
 
 namespace ReflectionApi.TestConsole
@@ -12,10 +12,10 @@ namespace ReflectionApi.TestConsole
     {
         public static void Main(string[] args)
         {
-            var test = ReflectionConvert.GetFields(typeof(TestClass));
-            var properties = ReflectionConvert.GetProperties(typeof(TestClass));
+            var test = ReflectionGetter.GetFields(typeof(TestClass));
+            var properties = ReflectionGetter.GetProperties(typeof(TestClass));
 
-            var methods = ReflectionConvert.GetMethods(typeof(TestClass));
+            var methods = ReflectionGetter.GetMethods(typeof(TestClass));
 
             foreach(var val in test)
             {

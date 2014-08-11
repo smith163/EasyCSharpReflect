@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using ReflectionApi.Convert;
+using ReflectionApi.Api;
 using ReflectionApi.ClassMembers;
 
 namespace ReflectionApi.UnitTests
@@ -32,7 +32,7 @@ namespace ReflectionApi.UnitTests
         [Test]
         public void TestGetFields()
         {
-            var fieldList = ReflectionConvert.GetFields(typeof(TestClass));
+            var fieldList = ReflectionGetter.GetFields(typeof(TestClass));
 
             Assert.IsTrue(fieldList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass) }));
             Assert.IsTrue(fieldList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass) }));
@@ -41,7 +41,7 @@ namespace ReflectionApi.UnitTests
         [Test]
         public void TestGetProperties()
         {
-            var fieldList = ReflectionConvert.GetProperties(typeof(TestClass));
+            var fieldList = ReflectionGetter.GetProperties(typeof(TestClass));
 
             Assert.IsTrue(fieldList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass) }));
             Assert.IsTrue(fieldList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass) }));
@@ -50,7 +50,7 @@ namespace ReflectionApi.UnitTests
         [Test]
         public void TestGetVariableMember()
         {
-            var variableList = ReflectionConvert.GetVariableMembers(typeof(TestClass));
+            var variableList = ReflectionGetter.GetVariableMembers(typeof(TestClass));
 
             Assert.IsTrue(variableList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass) }));
             Assert.IsTrue(variableList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass) }));

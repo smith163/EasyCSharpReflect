@@ -15,6 +15,14 @@ namespace ReflectionApi.ClassMembers
         public Type ReflectedType { get; set; }
         
 
+        protected VariableMember(VariableMember obj)
+        {
+            this.Name = obj.Name;
+            this.Type = obj.Type;
+            this.Value = obj.Value;
+            this.ReflectedType = obj.Type;
+        }
+
         protected VariableMember(string Name, Type type)
         {
             this.Name = Name;

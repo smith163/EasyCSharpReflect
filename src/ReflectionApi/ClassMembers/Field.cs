@@ -10,5 +10,6 @@ namespace ReflectionApi.ClassMembers
     {
         public Field(string Name, Type type) : base(Name, type) { }
         public Field() { }
+        public Field(VariableMember obj) : base(obj) { }
     }
 }

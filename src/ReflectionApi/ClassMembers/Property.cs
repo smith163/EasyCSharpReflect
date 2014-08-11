@@ -10,5 +10,6 @@ namespace ReflectionApi.ClassMembers
     {
         public Property(string Name, Type type) : base(Name, type) { }
         public Property() { }
+        public Property(VariableMember obj) : base(obj) { }
     }
 }

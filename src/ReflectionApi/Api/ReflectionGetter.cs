@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.Reflection;
 using ReflectionApi.ClassMembers;
 
-namespace ReflectionApi.Convert
+namespace ReflectionApi.Api
 {
-    public static class ReflectionConvert
+    public static class ReflectionGetter
     {
-
         public static List<Field> GetFields(Type objType)
         {
             return objType.GetFields().Select(m => new Field(){  Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType }).ToList();
@@ -31,7 +30,6 @@ namespace ReflectionApi.Convert
             return memberList;
 
         }
-
 
         public static List<string> GetMethods(Type objType)
         {

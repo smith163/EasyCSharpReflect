@@ -44,8 +44,9 @@
     <Compile Include="ClassMembers\Method.cs" />
     <Compile Include="ClassMembers\Property.cs" />
     <Compile Include="ClassMembers\VariableMember.cs" />
-    <Compile Include="Convert\ReflectionConvert.cs" />
+    <Compile Include="Api\ReflectionGetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Api\ReflectionConvert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReflectionApi.Interface\ReflectionApi.Interface.csproj">
