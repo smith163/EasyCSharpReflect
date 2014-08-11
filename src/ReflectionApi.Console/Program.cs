@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ReflectionApi.Convert;
+using ReflectionApi.Api;
 
 
 namespace ReflectionApi.TestConsole
@@ -12,10 +12,22 @@ namespace ReflectionApi.TestConsole
     {
         public static void Main(string[] args)
         {
-            var test = ReflectionConvert.GetFields(typeof(TestClass));
-            var properties = ReflectionConvert.GetProperties(typeof(TestClass));
+            var test = ReflectionGetter.GetFields(typeof(TestClass));
+            var properties = ReflectionGetter.GetProperties(typeof(TestClass));
 
-            var methods = ReflectionConvert.GetMethods(typeof(TestClass));
+            var temp = new TestClass()
+            {
+                Test1 = "Test1String",
+                Test2 = 2,
+                Test3 = 2.5,
+                Test4 = "Test4String"
+            };
+
+            var testList = ReflectionConvert.SerializeToDictionary<TestClass>(temp);
+
+               
+            /*
+            var methods = ReflectionGetter.GetMethods(typeof(TestClass));
 
             foreach(var val in test)
             {
@@ -25,7 +37,7 @@ namespace ReflectionApi.TestConsole
             foreach (var val in properties)
             {
                 Console.WriteLine(val.Name + ":" + val.Type.Name + ":" + val.ReflectedType.Name);
-            }
+            }*/
 
 
             Console.ReadLine();
