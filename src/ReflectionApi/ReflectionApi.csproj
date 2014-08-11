@@ -47,6 +47,12 @@
     <Compile Include="Convert\ReflectionConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReflectionApi.Interface\ReflectionApi.Interface.csproj">
+      <Project>{24dd46db-eac5-4954-a81b-fb2ddfede6f2}</Project>
+      <Name>ReflectionApi.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

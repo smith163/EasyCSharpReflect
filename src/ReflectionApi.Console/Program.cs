@@ -19,12 +19,12 @@ namespace ReflectionApi.TestConsole
 
             foreach(var val in test)
             {
-                Console.WriteLine(val.Name + ":" + val.Type.Name);
+                Console.WriteLine(val.Name + ":" + val.Type.Name + ":" + val.ReflectedType.Name);
             }
 
             foreach (var val in properties)
             {
-                Console.WriteLine(val.Name + ":" + val.Type.Name);
+                Console.WriteLine(val.Name + ":" + val.Type.Name + ":" + val.ReflectedType.Name);
             }
 
 

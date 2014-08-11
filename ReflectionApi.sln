@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionApi.TestConsole",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionApi.UnitTests", "src\ReflectionApi.UnitTests\ReflectionApi.UnitTests.csproj", "{975BB084-2AD3-4C76-8FCD-EF35685DE67A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionApi.Interface", "src\ReflectionApi.Interface\ReflectionApi.Interface.csproj", "{24DD46DB-EAC5-4954-A81B-FB2DDFEDE6F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D5D67C0A-0882-4F0F-B332-FBB2EC29C904}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{975BB084-2AD3-4C76-8FCD-EF35685DE67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{975BB084-2AD3-4C76-8FCD-EF35685DE67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{975BB084-2AD3-4C76-8FCD-EF35685DE67A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DD46DB-EAC5-4954-A81B-FB2DDFEDE6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DD46DB-EAC5-4954-A81B-FB2DDFEDE6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DD46DB-EAC5-4954-A81B-FB2DDFEDE6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DD46DB-EAC5-4954-A81B-FB2DDFEDE6F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
