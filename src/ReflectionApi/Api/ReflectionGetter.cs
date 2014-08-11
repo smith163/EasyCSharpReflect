@@ -10,6 +10,12 @@ namespace ReflectionApi.Api
 {
     public static class ReflectionGetter
     {
+
+        /// <summary>
+        /// Set value to -1 for reading purposes
+        /// </summary>
+        /// <param name="objType"></param>
+        /// <returns></returns>
         public static List<Field> GetFields(Type objType)
         {
             return objType.GetFields().Select(m => new Field(){  Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType, Value = Convert.ChangeType(-1, m.FieldType)}).ToList();

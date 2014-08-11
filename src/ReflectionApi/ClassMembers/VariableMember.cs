@@ -41,11 +41,7 @@ namespace ReflectionApi.ClassMembers
 
         public bool Equals(VariableMember obj)
         {
-            return
-                obj.Name == this.Name &&
-                obj.ReflectedType == this.ReflectedType &&
-                obj.Value == this.Value &&
-                obj.Type == this.Type;
+            return obj.GetHashCode() == this.GetHashCode();
         }
 
         public override int GetHashCode()
@@ -54,9 +50,10 @@ namespace ReflectionApi.ClassMembers
                 Name.GetHashCode() +
                 Type.GetHashCode() +
                 Value.GetHashCode() +
-                ReflectedType.GetHashCode();
+                ReflectedType.GetHashCode() +
+                _value.GetHashCode();
         }
 
-        protected VariableMember() { }
+        protected VariableMember() {  }
     }
 }

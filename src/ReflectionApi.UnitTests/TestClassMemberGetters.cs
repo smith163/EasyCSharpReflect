@@ -35,7 +35,7 @@ namespace ReflectionApi.UnitTests
             var fieldList = ReflectionGetter.GetFields(typeof(TestClass));
 
             Assert.IsTrue(fieldList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "-1" }));
-            Assert.IsTrue(fieldList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = -1 }));
+            Assert.IsTrue(fieldList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = -1.0 }));
         }
 
         [Test]
@@ -52,10 +52,10 @@ namespace ReflectionApi.UnitTests
         {
             var variableList = ReflectionGetter.GetVariableMembers(typeof(TestClass));
 
-            Assert.IsTrue(variableList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass) }));
-            Assert.IsTrue(variableList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass) }));
-            Assert.IsTrue(variableList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass) }));
-            Assert.IsTrue(variableList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass) }));
+            Assert.IsTrue(variableList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "-1" }));
+            Assert.IsTrue(variableList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass), Value = -1 }));
+            Assert.IsTrue(variableList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass), Value = -1.0 }));
+            Assert.IsTrue(variableList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = "-1" }));
         }
         
     }

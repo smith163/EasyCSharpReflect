@@ -38,9 +38,9 @@ namespace ReflectionApi.UnitTests
             var memberList = ReflectionConvert.SerializeToList<TestClass>(testClass);
 
             Assert.IsTrue(memberList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "Test1String" }));
-            //Assert.IsTrue(memberList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass), Value = 2 }));
+            Assert.IsTrue(memberList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass), Value = 2 }));
             Assert.IsTrue(memberList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "Test4String" }));
-            //Assert.IsTrue(memberList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = 2.5 }));
+            Assert.IsTrue(memberList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = 2.5 }));
 
         }
 
