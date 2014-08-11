@@ -11,5 +11,6 @@ namespace ReflectionApi.Interface
         string Name { get; set; }
         Type Type { get; set; }
         object Value { get; set; }
+        Type ReflectedType { get; set; }
     }
 }

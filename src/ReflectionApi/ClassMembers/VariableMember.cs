@@ -12,6 +12,8 @@ namespace ReflectionApi.ClassMembers
         public string Name { get; set; }
         public Type Type { get; set; }
         public object Value { get; set; }
+        public Type ReflectedType { get; set; }
+        
 
         protected VariableMember(string Name, Type type)
         {
