@@ -21,6 +21,29 @@ namespace ReflectionApi.ClassMembers
             this.Type = type;
         }
 
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as VariableMember);
+        }
+
+        public bool Equals(VariableMember obj)
+        {
+            return
+                obj.Name == this.Name &&
+                obj.ReflectedType == this.ReflectedType &&
+                obj.Value == this.Value &&
+                obj.Type == this.Type;
+        }
+
+        public override int GetHashCode()
+        {
+            return
+                Name.GetHashCode() +
+                Type.GetHashCode() +
+                Value.GetHashCode() +
+                ReflectedType.GetHashCode();
+        }
+
         protected VariableMember() { }
     }
 }
