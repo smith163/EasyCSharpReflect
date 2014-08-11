@@ -21,7 +21,7 @@ namespace ReflectionApi.TestConsole
                 Test2 = 2,
                 Test3 = 2.5,
                 Test4 = "Test4String",
-                TestSub = new TestSubClass() { TestSub = "TestSub" }
+                TestSub = new TestSubClass() { TestSub = "TestSub", TestSub2 = new TestSubClass2() { TestSub3 = "TestSub3"} }
             };
 
             var testList = ReflectionConvert.SerializeToDictionary<TestClass>(temp);

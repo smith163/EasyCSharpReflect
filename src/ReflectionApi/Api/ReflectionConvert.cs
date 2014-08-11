@@ -43,13 +43,8 @@ namespace ReflectionApi.Api
             {
                 if (!val.Type.IsPrimitive && val.Type != typeof(string))
                 {
-
                     MethodInfo testMethod = typeof(ReflectionConvert).GetMethod("SerializeProperties", BindingFlags.NonPublic | BindingFlags.Static).MakeGenericMethod(val.Type);
                     testMethod.Invoke(null, new object[] { val.Value });
-
-                    //propertyList.AddRange(SerializeProperties<val.GetType>(val.Value));
-
-   
                 }
             }
 

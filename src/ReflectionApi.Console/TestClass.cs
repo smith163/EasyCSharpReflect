@@ -24,5 +24,11 @@ namespace ReflectionApi.TestConsole
     public class TestSubClass
     {
         public string TestSub { get; set; }
+        public TestSubClass2 TestSub2 { get; set; }
+    }
+
+    public class TestSubClass2
+    {
+        public string TestSub3 { get; set; }
     }
 }
