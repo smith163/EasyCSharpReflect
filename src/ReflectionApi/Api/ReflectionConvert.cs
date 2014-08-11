@@ -25,7 +25,7 @@ namespace ReflectionApi.Api
             var memberBag = new Dictionary<string,VariableMember>();
 
             AddRange<Field>(memberBag, SerializeFields<T>(obj).ToDictionary(x => x.Name, y => new Field(y)));
-            AddRange<Property>(memberBag, SerializeFields<T>(obj).ToDictionary(x => x.Name, y => new Property(y)));
+            AddRange<Property>(memberBag, SerializeProperties<T>(obj).ToDictionary(x => x.Name, y => new Property(y)));
 
             return memberBag;
         }
