@@ -21,6 +21,27 @@ namespace ReflectionApi.Convert
             return objType.GetProperties().Select(m => new Property() { Name = m.Name, Type = m.PropertyType, ReflectedType = m.ReflectedType }).ToList();
         }
 
+        public static List<VariableMember> GetVariableMembers(Type objType)
+        {
+            var fieldList = GetFields(objType);
+            var propertyList = GetProperties(objType);
+
+            var memberList = new List<VariableMember>();
+
+            foreach(var val in fieldList)
+            {
+                memberList.Add(val);
+            }
+
+            foreach (var val in propertyList)
+            {
+                memberList.Add(val);
+            }
+
+            return memberList;
+
+        }
+
 
         public static List<string> GetMethods(Type objType)
         {
