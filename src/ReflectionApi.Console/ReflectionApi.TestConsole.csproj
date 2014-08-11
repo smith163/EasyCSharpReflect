@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReflectionApi.Interface\ReflectionApi.Interface.csproj">
+      <Project>{24dd46db-eac5-4954-a81b-fb2ddfede6f2}</Project>
+      <Name>ReflectionApi.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReflectionApi\ReflectionApi.csproj">
       <Project>{eac4cf27-d3a7-4775-8345-60fcaa5175a4}</Project>
       <Name>ReflectionApi</Name>
