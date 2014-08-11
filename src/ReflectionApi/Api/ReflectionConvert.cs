@@ -32,14 +32,28 @@ namespace ReflectionApi.Api
 
         private static List<Field> SerializeFields<T>(T obj)
         {
-            return
-                typeof(T).GetFields().Select(m => new Field() { Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType, Value = m.GetValue(obj) }).ToList();
+            return typeof(T).GetFields().Select(m => new Field() { Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType, Value = m.GetValue(obj) }).ToList();
         }
 
         private static List<Property> SerializeProperties<T>(T obj)
         {
-            return
-                typeof(T).GetProperties().Select(m => new Property() { Name = m.Name, Type = m.PropertyType, ReflectedType = m.ReflectedType, Value = m.GetValue(obj) }).ToList();
+            var propertyList = typeof(T).GetProperties().Select(m => new Property() { Name = m.Name, Type = m.PropertyType, ReflectedType = m.ReflectedType, Value = m.GetValue(obj) }).ToList();
+
+            foreach(var val in propertyList)
+            {
+                if (!val.Type.IsPrimitive && val.Type != typeof(string))
+                {
+
+                    MethodInfo testMethod = typeof(ReflectionConvert).GetMethod("SerializeProperties", BindingFlags.NonPublic | BindingFlags.Static).MakeGenericMethod(val.Type);
+                    testMethod.Invoke(null, new object[] { val.Value });
+
+                    //propertyList.AddRange(SerializeProperties<val.GetType>(val.Value));
+
+   
+                }
+            }
+
+            return propertyList;
         }
 
         private static void AddRange<T>(this Dictionary<string, VariableMember> target, Dictionary<string, T> source) where T : VariableMember

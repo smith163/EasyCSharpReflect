@@ -12,19 +12,23 @@ namespace ReflectionApi.TestConsole
     {
         public static void Main(string[] args)
         {
-            var test = ReflectionGetter.GetFields(typeof(TestClass));
-            var properties = ReflectionGetter.GetProperties(typeof(TestClass));
+            //var test = ReflectionGetter.GetFields(typeof(TestClass));
+            //var properties = ReflectionGetter.GetProperties(typeof(TestClass));
 
             var temp = new TestClass()
             {
                 Test1 = "Test1String",
                 Test2 = 2,
                 Test3 = 2.5,
-                Test4 = "Test4String"
+                Test4 = "Test4String",
+                TestSub = new TestSubClass() { TestSub = "TestSub" }
             };
 
             var testList = ReflectionConvert.SerializeToDictionary<TestClass>(temp);
-
+            foreach(var val in testList)
+            {
+                Console.WriteLine(val.Key + ":" + val.Value.Value);
+            }
                
             /*
             var methods = ReflectionGetter.GetMethods(typeof(TestClass));
