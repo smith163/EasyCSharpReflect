@@ -11,7 +11,12 @@ namespace ReflectionApi.ClassMembers
     {
         public string Name { get; set; }
         public Type Type { get; set; }
-        public object Value { get; set; }
+        private object _value;
+        public object Value 
+        { 
+            get { return Convert.ChangeType(_value, Type); } 
+            set { _value = Convert.ChangeType(value, Type); } 
+        }
         public Type ReflectedType { get; set; }
         
 

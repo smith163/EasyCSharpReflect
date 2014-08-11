@@ -37,8 +37,11 @@ namespace ReflectionApi.UnitTests
         {
             var memberList = ReflectionConvert.SerializeToList<TestClass>(testClass);
 
-            Assert.IsTrue(memberList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass), Value = (object)"Test1String" }));
-            Assert.IsTrue(memberList.Contains(new Field() { Name = "Test3", Type = typeof(string), ReflectedType = typeof(TestClass), Value = (object)2 }));
+            Assert.IsTrue(memberList.Contains(new Property() { Name = "Test1", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "Test1String" }));
+            //Assert.IsTrue(memberList.Contains(new Property() { Name = "Test2", Type = typeof(int), ReflectedType = typeof(TestClass), Value = 2 }));
+            Assert.IsTrue(memberList.Contains(new Field() { Name = "Test4", Type = typeof(string), ReflectedType = typeof(TestClass), Value = "Test4String" }));
+            //Assert.IsTrue(memberList.Contains(new Field() { Name = "Test3", Type = typeof(double), ReflectedType = typeof(TestClass), Value = 2.5 }));
+
         }
 
         [Test]
@@ -46,10 +49,10 @@ namespace ReflectionApi.UnitTests
         {
             var memberList = ReflectionConvert.SerializeToDictionary<TestClass>(testClass);
 
-            Assert.AreEqual("Test1String", memberList["Test1"]);
-            Assert.AreEqual("2", memberList["Test2"]);
-            Assert.AreEqual("2.5", memberList["Test3"]);
-            Assert.AreEqual("Test4String", memberList["Test4"]);
+            Assert.AreEqual("Test1String", memberList["Test1"].Value);
+            Assert.AreEqual(2, memberList["Test2"].Value);
+            Assert.AreEqual(2.5, memberList["Test3"].Value);
+            Assert.AreEqual("Test4String", memberList["Test4"].Value);
         }
 
         public class TestClass

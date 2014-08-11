@@ -12,12 +12,12 @@ namespace ReflectionApi.Api
     {
         public static List<Field> GetFields(Type objType)
         {
-            return objType.GetFields().Select(m => new Field(){  Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType }).ToList();
+            return objType.GetFields().Select(m => new Field(){  Name = m.Name, Type = m.FieldType, ReflectedType = m.ReflectedType, Value = Convert.ChangeType(-1, m.FieldType)}).ToList();
         }
 
         public static List<Property> GetProperties(Type objType)
         {
-            return objType.GetProperties().Select(m => new Property() { Name = m.Name, Type = m.PropertyType, ReflectedType = m.ReflectedType }).ToList();
+            return objType.GetProperties().Select(m => new Property() { Name = m.Name, Type = m.PropertyType, ReflectedType = m.ReflectedType, Value = Convert.ChangeType(-1, m.PropertyType) }).ToList();
         }
 
         public static List<VariableMember> GetVariableMembers(Type objType)
