@@ -23,20 +23,10 @@ namespace ReflectionApi.Convert
 
         public static List<VariableMember> GetVariableMembers(Type objType)
         {
-            var fieldList = GetFields(objType);
-            var propertyList = GetProperties(objType);
-
             var memberList = new List<VariableMember>();
-
-            foreach(var val in fieldList)
-            {
-                memberList.Add(val);
-            }
-
-            foreach (var val in propertyList)
-            {
-                memberList.Add(val);
-            }
+               
+            memberList.AddRange(GetFields(objType));
+            memberList.AddRange(GetProperties(objType));
 
             return memberList;
 
